@@ -1,5 +1,11 @@
 set -ex
 
+if [[ "$CONDA_BUILD_CROSS_COMPILING" == "1" ]]; then
+  # need to deal with pmixcc for cross compiling
+  export PMIX_CC=$CC
+  export PMIX_PREFIX=$PREFIX
+fi
+
 ./configure \
   --with-libevent=$PREFIX \
   --with-hwloc=$PREFIX \

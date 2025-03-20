@@ -24,6 +24,7 @@ requirements:
     - make
     - flex
     - pkg-config
+    - pmix-bin  # [target_platform != build_platform]
   host:
     - libevent
     - libhwloc
