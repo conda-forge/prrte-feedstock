@@ -9,7 +9,7 @@ fi
 ./configure \
   --with-libevent=$PREFIX \
   --with-hwloc=$PREFIX \
-  --with-pmix=$PREFIX \
+  --with-pmix=${PMIX_PREFIX:-$PREFIX} \
   --with-sge \
   --enable-ipv6 \
   --enable-prte-prefix-by-default \
