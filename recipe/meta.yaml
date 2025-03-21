@@ -60,6 +60,9 @@ outputs:
         - libevent
         - libhwloc
         - libpmix-devel
+        # not needed for run exports
+        # but pcc symlink is removed if not here
+        - pmix-bin
 
     test:
       commands:
@@ -98,10 +101,14 @@ outputs:
         - libevent
         - libhwloc
         - libpmix-devel
+        - pmix-bin
         - {{ pin_subpackage('libprrte', exact=True) }}
       run:
         - {{ pin_subpackage('libprrte', exact=True) }}
     test:
+      requires:
+        # only required for verifying pcc symlink
+        - pmix-bin
       commands:
         - prte_info
         - prun --do-not-connect --allow-run-as-root -n 2 sh -c 'echo hi'
