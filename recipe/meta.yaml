@@ -24,7 +24,8 @@ requirements:
     - make
     - flex
     - pkg-config
-    - pmix-bin  # [target_platform != build_platform]
+    - pmix-bin
+      # [target_platform != build_platform]
   host:
     - libevent
     - libhwloc
@@ -104,6 +105,7 @@ outputs:
       commands:
         - prte_info
         - prun --do-not-connect --allow-run-as-root -n 2 sh -c 'echo hi'
+        - pcc -showme
 
 
 about:
