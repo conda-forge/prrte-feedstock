@@ -17,7 +17,7 @@ fi
   --enable-ipv6 \
   --enable-prte-prefix-by-default \
   --disable-dependency-tracking \
-  --prefix=$PREFIX
+  --prefix=$PREFIX || (tail -n 1000 config.log; exit 1)
 
 make -j ${CPU_COUNT:-1}
 make install
