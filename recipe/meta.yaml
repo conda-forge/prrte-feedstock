@@ -1,5 +1,5 @@
 {% set name = "prrte" %}
-{% set version = "3.0.10" %}
+{% set version = "3.0.11" %}
 
 package:
   name: {{ name|lower }}-split
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/openpmix/prrte/releases/download/v{{ version }}/prrte-{{ version }}.tar.bz2
-  sha256: f5525d88937a5664ab5248a7c05e9ee51389937cd0993398e8270ed5cf53d638
+  sha256: 37af5a82d333a54c0bac358f06c194427b7dbfa7b8b85f2ddd1145acf71cfdd4
 
 build:
   skip: true  # [win]
