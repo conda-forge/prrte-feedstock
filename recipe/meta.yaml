@@ -24,12 +24,10 @@ requirements:
     - make
     - flex
     - pkg-config
-    - pmix-bin  # [target_platform != build_platform]
   host:
     - libevent
     - libhwloc
     - libpmix-devel
-    - pmix-bin
 
 outputs:
   - name: libprrte
