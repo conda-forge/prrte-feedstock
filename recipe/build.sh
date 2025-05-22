@@ -13,9 +13,8 @@ set -ex
 make -j ${CPU_COUNT:-1}
 make install
 
-# pcc symlink to pmixcc is wrong for cross compilation
-# first, make sure this really is a symlink we are fixing
-test -L $PREFIX/bin/pcc
-rm $PREFIX/bin/pcc
+# pcc symlink to pmixcc is wrong for cross compilation,
+# or may not exist, so recreate it
+rm -f $PREFIX/bin/pcc
 ln -s pmixcc $PREFIX/bin/pcc
 test -f $PREFIX/bin/pcc
