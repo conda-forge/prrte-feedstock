@@ -1,5 +1,5 @@
 {% set name = "prrte" %}
-{% set version = "3.0.11" %}
+{% set version = "4.0.0" %}
 
 package:
   name: {{ name|lower }}-split
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/openpmix/prrte/releases/download/v{{ version }}/prrte-{{ version }}.tar.bz2
-  sha256: 37af5a82d333a54c0bac358f06c194427b7dbfa7b8b85f2ddd1145acf71cfdd4
+  sha256: 3c2ec961e0ba0c99128c7bf3545f4789d55a85a70ce958e868ae5e3db6ed4de4
 
 build:
   skip: true  # [win]
@@ -24,8 +24,6 @@ requirements:
     - make
     - flex
     - pkg-config
-    - pmix-bin
-      # [target_platform != build_platform]
   host:
     - libevent
     - libhwloc
