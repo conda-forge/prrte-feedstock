@@ -17,6 +17,6 @@ docker_image:
 libevent:
 - 2.1.12
 libhwloc:
-- 2.11.2
+- 2.12.1
 target_platform:
 - linux-ppc64le
